@@ -20,13 +20,17 @@
 
         var value = (val + (100 * modif)) / 100;
 
-        if(+value === value) {
+        if(+value === value && value !== 0) {
             out.innerText = value;
         }
     }
 
     function bootstrap () {
+
+        $(m).on('change', function() {
+            update();
+        });
+
         n.addEventListener('keyup', update);
-        m.addEventListener('change', update);
     }
 })();
